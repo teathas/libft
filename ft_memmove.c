@@ -6,14 +6,15 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 21:07:37 by aberkass          #+#    #+#             */
-/*   Updated: 2024/10/27 21:09:12 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/08 18:38:53 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char	*t_dst;
+	char		*t_dst;
 	const char	*t_src;
 
 	if (src == NULL || dst == NULL)

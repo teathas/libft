@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/08 18:30:33 by aberkass          #+#    #+#             */
+/*   Updated: 2024/11/08 18:35:42 by aberkass         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
@@ -8,7 +20,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f || !del)
 		return (NULL);
-
 	res = NULL;
 	while (lst)
 	{
@@ -17,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		{
 			ft_lstclear(&res, del);
 			return (NULL);
-		}	
+		}
 		new_node->content = (*f)(lst->content);
 		if (!res)
 			res = new_node;
@@ -26,7 +37,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			append = ft_lstlast(res);
 			append->next = new_node;
 		}
-		lst = lst->next;		
+		lst = lst->next;
 	}
 	return (res);
 }

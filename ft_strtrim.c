@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:56:29 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/02 22:02:17 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/08 18:39:44 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_isin(char const	*str, char c)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*new;
+	char		*new;
 	size_t		new_size;
 
 	while (*s1 && ft_isin(set, *s1))

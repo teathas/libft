@@ -26,6 +26,8 @@ all: $(NAME)
 $(NAME): $(OBG)
 	ar rc $(NAME) $(OBG)
 
+.c.o:
+	$(CC) $(FLAGS) -c $< -o $@
 clean:
 	$(RM) $(OBG) $(B_OBG)
 
