@@ -18,9 +18,6 @@ RM = rm -f
 
 all: $(NAME)
 
-%.c: %.o
-	$(CC) $(CFLAGS) -c $(SRC)
-
 $(NAME): $(OBG)
 	ar rc $(NAME) $(OBG)
 
