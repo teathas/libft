@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 08:08:00 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/09 14:43:32 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/09 22:18:06 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static int	ft_wc(char const *s, char c)
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
-			s++;
+			i++;
 		if (s[i] != c)
 			wc++;
 		while (s[i] != c && s[i])
-			s++;
+			i++;
 	}
 	return (wc);
 }
@@ -38,7 +38,7 @@ char	**ft_split(char const	*s, char c)
 	size_t		word_size;
 
 	splited = (char **)malloc((ft_wc(s, c) + 1) * sizeof(char *));
-	if (splited == NULL)
+	if (!s || !splited)
 		return (NULL);
 	i = 0;
 	while (*s)
@@ -47,7 +47,7 @@ char	**ft_split(char const	*s, char c)
 			s++;
 		while (*s)
 		{
-			if (ft_strchr(s, c) == 0)
+			if (!ft_strchr(s, c))
 				word_size = ft_strlen(s);
 			else
 				word_size = ft_strchr(s, c) - s;
