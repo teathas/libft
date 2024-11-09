@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:56:48 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/09 20:48:15 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/09 20:52:41 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub = (char *)malloc(len + 1);
 	if (!sub)
 		return (NULL);
-	sub = ft_strlcpy(sub, s + start, len + 1);
+	ft_strlcpy(sub, s + start, len + 1);
 	return (sub);
 }
