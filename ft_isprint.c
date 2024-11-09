@@ -6,14 +6,14 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 20:59:54 by aberkass          #+#    #+#             */
-/*   Updated: 2024/10/27 21:00:14 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/09 18:34:27 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_isprint(int c)
 {
-	if (c >= ' ' || c <= '~')
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }
