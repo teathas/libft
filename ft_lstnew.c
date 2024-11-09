@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:33:15 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/08 18:36:09 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/09 22:51:27 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
 
-	if (content == NULL)
-		return (NULL);
 	node = (t_list *)malloc(sizeof(t_list));
-	if (node == NULL)
+	if (!node)
 		return (NULL);
 	node->content = content;
 	node->next = NULL;

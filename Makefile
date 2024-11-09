@@ -8,7 +8,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 
 OBG = $(SRC:.c=.o)
 
-B_SRC = ft_lstadd_back.c ft_lsadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c\
+B_SRC = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c\
 	ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
 B_OBG = $(B_SRC:.c=.o)
@@ -24,7 +24,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBG)
-	ar rc $(NAME) $(OBG)
+	ar rcs $(NAME) $(OBG)
+
+bonus: $(B_OBG)
+	ar rcs $(NAME) $(B_OBG)
 
 .c.o:
 	$(CC) $(FLAGS) -c $< -o $@
