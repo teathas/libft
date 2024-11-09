@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 21:06:25 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/08 18:38:21 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/09 18:43:41 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	t_dst = (char *)dst;
 	t_src = (const char *)src;
 	i = 0;
-	if (src == NULL || dst == NULL || n == 0)
+	if (!src || !dst || n == 0)
 		return (dst);
 	while (i < n)
 	{
