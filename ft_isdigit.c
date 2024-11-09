@@ -6,14 +6,14 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 20:56:15 by aberkass          #+#    #+#             */
-/*   Updated: 2024/10/27 20:58:37 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/09 14:48:47 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_idigit(int d)
+int	ft_isdigit(int d)
 {
-	if (d < 0 || d > 9)
+	if (d < '0' || d > '9')
 		return (0);
 	return (1);
 }
