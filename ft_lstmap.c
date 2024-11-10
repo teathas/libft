@@ -5,18 +5,6 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 23:14:48 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/09 23:17:14 by aberkass         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:30:33 by aberkass          #+#    #+#             */
 /*   Updated: 2024/11/08 18:35:42 by aberkass         ###   ########.fr       */
 /*                                                                            */
@@ -24,7 +12,7 @@
 
 #include "libft.h"
 
-static t_list	*create_node(void *content, void *(*f)(void *), void (*del)(void *))
+static t_list	*create_node(void *content, void *(*f)(void *))
 {
 	t_list	*new_node;
 	
@@ -48,21 +36,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	while (lst)
 	{
-		new_node = create_node(lst->content, f, del);
+		new_node = create_node(lst->content, f);
 		if (!new_node)
 		{
 			ft_lstclear(&res, del);
 			return (NULL);
 		}
-
 		if (!res)
 			res = new_node;
 		else
 			last_node->next = new_node;
-
 		last_node = new_node;
 		lst = lst->next;
 	}
 	return (res);
 }
-
