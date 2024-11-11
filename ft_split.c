@@ -36,24 +36,35 @@ char	**ft_split(char const	*s, char c)
 	char		**splited;
 	int			i;
 	size_t		word_size;
+	size_t		start;
 
+	if (!s)
+		return (NULL);
 	splited = (char **)malloc((ft_wc(s, c) + 1) * sizeof(char *));
-	if (!s || !splited)
+	if (!splited)
 		return (NULL);
 	i = 0;
 	while (*s)
 	{
 		while (*s == c && *s)
 			s++;
-		while (*s)
+		if (*s == '\0')
+			break;
+		start = s;
+		while (*s == c && *s)
 		{
-			if (!ft_strchr(s, c))
-				word_size = ft_strlen(s);
-			else
-				word_size = ft_strchr(s, c) - s;
-			splited[i] = ft_substr(s, 0, word_size);
-			i++;
-			s += word_size;
+			s++;
+		}
+		word_size = s - start;
+		splited[i++] = ft_substr(start, 0, word_size);
+		if (!splited[i])
+		{
+			while (i > 0)
+			{
+				free(splited[--i]);
+			}
+			free(splited);
+			return (NULL);
 		}
 	}
 	splited[i] = NULL;
