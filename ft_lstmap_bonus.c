@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:30:33 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/08 18:35:42 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/10 22:17:48 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 static t_list	*create_node(void *content, void *(*f)(void *))
 {
 	t_list	*new_node;
-	
+
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
-	    return (NULL);
+		return (NULL);
 	new_node->content = (*f)(content);
 	new_node->next = NULL;
 	return (new_node);

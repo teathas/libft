@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:28:18 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/09 23:04:23 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/11 13:19:39 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*curr;
-	
+
 	if (!lst || !new)
 		return ;
 	if (!(*lst))
