@@ -12,13 +12,16 @@
 
 #include "libft.h"
 
-static int	ft_nb_len(int n)
+static int	ft_nbr_len(int n)
 {
 	int	len;
 
-	len = 0;
 	if (n <= 0)
-		len++;
+		len = 1;
+	else
+		len = 0;
+	if (n == 0)
+		return (len);
 	while (n)
 	{
 		n /= 10;
@@ -27,14 +30,23 @@ static int	ft_nb_len(int n)
 	return (len);
 }
 
+static void	ft_fill(char *res, unsigned int nbr, int len)
+{
+	while (nbr)
+	{
+		res[len--] = (nbr % 10) + 48;
+		nbr /= 10;
+	}
+}
+
 char	*ft_itoa(int n)
 {
-	char	*res;
-	int		len;
+	char		*res;
+	int			len;
 
-	len = ft_nb_len(n);
+	len = ft_nbr_len(n);
 	res = (char *)malloc((len + 1) * sizeof(char));
-	if (res == NULL)
+	if (!res)
 		return (NULL);
 	res[len--] = '\0';
 	if (n == 0)
@@ -42,14 +54,13 @@ char	*ft_itoa(int n)
 		res[0] = '0';
 		return (res);
 	}
-	if (n < 0)
+	else if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	else if (n < 0)
 	{
 		res[0] = '-';
 		n = -n;
 	}
-	while (n)
-	{
-		res[len--] = (n % 10) + 48;
-	}
+	ft_fill(res, n, len);
 	return (res);
 }
