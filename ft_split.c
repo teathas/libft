@@ -23,49 +23,47 @@ static int	ft_wc(char const *s, char c)
 	{
 		while (s[i] == c && s[i])
 			i++;
-		if (s[i] != c)
+		if (s[i] != c && s[i])
+		{
 			wc++;
-		while (s[i] != c && s[i])
-			i++;
+			while (s[i] != c && s[i])
+				i++;
+		}
 	}
 	return (wc);
+}
+
+static void	ft_free(char **s, int i)
+{
+	while (i > 0)
+	{
+		free(s[--i]);
+	}
+	free(s);
 }
 
 char	**ft_split(char const	*s, char c)
 {
 	char		**splited;
 	int			i;
-	size_t		word_size;
+	int			j;
 	size_t		start;
 
-	if (!s)
-		return (NULL);
 	splited = (char **)malloc((ft_wc(s, c) + 1) * sizeof(char *));
-	if (!splited)
-		return (NULL);
+	if (!splited || !s)
+		return (free(splited), NULL);
 	i = 0;
-	while (*s)
+	j = 0;
+	while (s[j] && i < ft_wc(s, c))
 	{
-		while (*s == c && *s)
-			s++;
-		if (*s == '\0')
-			break;
-		start = s;
-		while (*s == c && *s)
-		{
-			s++;
-		}
-		word_size = s - start;
-		splited[i++] = ft_substr(start, 0, word_size);
-		if (!splited[i])
-		{
-			while (i > 0)
-			{
-				free(splited[--i]);
-			}
-			free(splited);
-			return (NULL);
-		}
+		while (s[j] == c && s[j])
+			j++;
+		start = j;
+		while (s[j] != c && s[j])
+			j++;
+		splited[i++] = ft_substr(s, start, j - start);
+		if (!splited[i - 1])
+			return (ft_free(splited, i - 1), NULL);
 	}
 	splited[i] = NULL;
 	return (splited);
