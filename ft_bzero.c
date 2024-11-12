@@ -6,9 +6,10 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 21:05:21 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/12 17:10:44 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:14:17 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

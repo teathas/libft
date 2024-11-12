@@ -6,9 +6,10 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 20:56:15 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/09 14:48:47 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:15:50 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_isdigit(int d)

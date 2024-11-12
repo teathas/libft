@@ -6,9 +6,10 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 20:59:00 by aberkass          #+#    #+#             */
-/*   Updated: 2024/10/27 20:59:44 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:15:38 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_isascii(int c)

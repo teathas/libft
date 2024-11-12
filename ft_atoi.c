@@ -6,9 +6,10 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 21:48:49 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/12 15:19:37 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:14:00 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char	*str)
