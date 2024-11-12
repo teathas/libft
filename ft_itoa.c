@@ -12,16 +12,13 @@
 
 #include "libft.h"
 
-static int	ft_nbr_len(int n)
+static int	ft_nlen(int n)
 {
 	int	len;
 
-	if (n <= 0)
-		len = 1;
-	else
-		len = 0;
+	len = 0;
 	if (n == 0)
-		return (len);
+		return (1);
 	while (n)
 	{
 		n /= 10;
@@ -30,12 +27,13 @@ static int	ft_nbr_len(int n)
 	return (len);
 }
 
-static void	ft_fill(char *res, unsigned int nbr, int len)
+static void	ft_fill(char *res, int n, int i)
 {
-	while (nbr)
+	while (n > 0)
 	{
-		res[len--] = (nbr % 10) + 48;
-		nbr /= 10;
+		res[i] = (n % 10) + 48;
+		n /= 10;
+		i--;
 	}
 }
 
@@ -43,24 +41,25 @@ char	*ft_itoa(int n)
 {
 	char		*res;
 	int			len;
+	int			s;
 
-	len = ft_nbr_len(n);
-	res = (char *)malloc((len + 1) * sizeof(char));
+	s = 0;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n < 0)
+	{
+		s++;
+		n *= -1;
+	}
+	len = ft_nlen(n);
+	res = (char *)malloc((len + s + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
-	res[len--] = '\0';
-	if (n == 0)
-	{
-		res[0] = '0';
-		return (res);
-	}
-	else if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	else if (n < 0)
-	{
+	if (s)
 		res[0] = '-';
-		n = -n;
-	}
-	ft_fill(res, n, len);
+	if (n == 0)
+		res[0] = '0';
+	ft_fill(res, n, len + s - 1);
+	res[len + s] = '\0';
 	return (res);
 }
