@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:56:29 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/09 22:09:54 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/13 12:29:04 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char		*new;
 	size_t		new_size;
 
+	if (!s1 || !set)
+		return (NULL);
 	while (*s1 && ft_isin(set, *s1))
 	{
 		s1++;

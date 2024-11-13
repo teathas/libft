@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 08:08:00 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/09 22:18:06 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/13 12:29:48 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,11 @@ char	**ft_split(char const	*s, char c)
 	int			j;
 	size_t		start;
 
+	if (!s)
+		return (NULL);
 	splited = (char **)malloc((ft_wc(s, c) + 1) * sizeof(char *));
-	if (!splited || !s)
-		return (free(splited), NULL);
+	if (!splited)
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (s[j] && i < ft_wc(s, c))
