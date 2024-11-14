@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 21:55:51 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/12 18:14:54 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/14 10:24:28 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	*ft_calloc(size_t	count, size_t	size)
 {
-	int			s;
+	int			v;
 	void		*ptr;
 
-	s = count * size;
-	if (size && (s / size != count))
+	v = count * size;
+	if (size && (v / size != count))
 		return (NULL);
 	ptr = (void *)malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, size * count);
+	ft_bzero(ptr, v);
 	return (ptr);
 }
