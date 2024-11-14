@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:55:17 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/14 10:27:03 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/14 11:22:46 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,25 @@ char	*ft_itoa(int n)
 {
 	char		*res;
 	int			len;
-	int			s;
+	int			sign;
 
-	s = 0;
+	sign = 0;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
-		s++;
+		sign++;
 		n *= -1;
 	}
 	len = ft_nlen(n);
-	res = (char *)malloc((len + s + 1) * sizeof(char));
+	res = (char *)malloc((len + sign + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
-	if (s)
+	if (sign)
 		res[0] = '-';
 	if (n == 0)
 		res[0] = '0';
-	ft_fill(res, n, len + s - 1);
-	res[len + s] = '\0';
+	ft_fill(res, n, len + sign - 1);
+	res[len + sign] = '\0';
 	return (res);
 }

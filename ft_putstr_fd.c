@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:43:02 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/02 21:44:11 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/14 11:27:08 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s == NULL)
+	if (!s)
 		return ;
 	write(fd, s, ft_strlen(s));
 }

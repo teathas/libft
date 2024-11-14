@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:40:51 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/09 14:47:04 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/14 11:25:47 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		return ;
 	while (i < ft_strlen(s))
 	{
-		(*f)(i, &s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }

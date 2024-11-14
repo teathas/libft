@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 21:13:51 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/09 19:42:11 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/14 10:50:32 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	if (s[i] == a)
-	{
 		return ((char *)&s[i]);
-	}
 	return (NULL);
 }

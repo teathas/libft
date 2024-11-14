@@ -6,7 +6,7 @@
 /*   By: aberkass <aberkass@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:37:46 by aberkass          #+#    #+#             */
-/*   Updated: 2024/11/09 22:21:15 by aberkass         ###   ########.fr       */
+/*   Updated: 2024/11/14 11:25:05 by aberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (i < ft_strlen(s))
 	{
-		res[i] = (*f)(i, (char)s[i]);
+		res[i] = f(i, (char)s[i]);
 		i++;
 	}
 	res[i] = '\0';
